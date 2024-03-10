@@ -14,7 +14,7 @@ Go to the EC2 Dashboard
 
 ## 3. Launch an Instance
 
-• Click on the "Launch Instance" button.
+• Click on the "Launch Instance" button.\n
 • Choose an Amazon Machine Image (AMI), such as Amazon Linux or Ubuntu.
 • Select an instance type based on your project requirements.
 • Here we are setting up EC2 instance with the Ubuntu 64-bit operating system and the t2.micro instance type, which is eligible for the AWS Free Tier.
