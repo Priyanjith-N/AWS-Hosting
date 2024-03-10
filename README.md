@@ -99,7 +99,7 @@ npm -v
 
 ## 1. Clone your application from GitHub
 
-Replace <your-git-repository-url> with the URL of your Git repository.
+Replace `<your-git-repository-url>` with the URL of your Git repository.
 
 ```bash
 git clone <your-git-repository-url>
