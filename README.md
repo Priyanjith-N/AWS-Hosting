@@ -340,6 +340,6 @@ sudo certbot renew --dry-run
 
 - If your project has been successfully deployed, feel free to check it out.
 
-[![Instagram](https://www.instagram.com/priyan_jith/)
+[![Instagram](https://img.shields.io/badge/Instagram-priyan_jith-blue)](https://www.instagram.com/priyan_jith/)
 
-[![LinkedIn](https://www.linkedin.com/in/priyanjith-n/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Priyanjith%20N-blue)](https://www.linkedin.com/in/priyanjith-n/)
