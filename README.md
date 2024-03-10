@@ -133,7 +133,7 @@ nano .env
 
 ## 5. Make sure that your application runs smoothly
 
-## 1. Install pm2
+### 1. Install pm2
 
 PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks.
 
@@ -141,7 +141,7 @@ PM2 is a production process manager for Node.js applications with a built-in loa
 npm i pm2 -g
 ```
 
-## 2. Starting your application
+### 2. Starting your application
 
 ```bash
 pm2 start app.js
@@ -149,15 +149,15 @@ pm2 start app.js
 
 Here app.js may change to your file name.
 
-## Other pm2 commands
+### Other pm2 commands
 
-### To check the version of pm2
+#### To check the version of pm2
 
 ```bash
 pm2 -v
 ```
 
-### To stop pm2
+#### To stop pm2
 
 ```bash
 pm2 stop app
@@ -169,7 +169,7 @@ pm2 stop app
 pm2 stop all
 ```
 
-### To restart pm2
+#### To restart pm2
 
 ```bash
 pm2 restart app
@@ -181,13 +181,13 @@ pm2 restart app
 pm2 restart all
 ```
 
-### To see log
+#### To see log
 
 ```bash
 pm2 log
 ```
 
-### To clear all process log
+#### To clear all process log
 
 ```bash
 pm2 flush
