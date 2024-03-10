@@ -151,13 +151,13 @@ Here app.js may change to your file name.
 
 ### Other pm2 commands
 
-#### To check the version of pm2
+#### - To check the version of pm2
 
 ```bash
 pm2 -v
 ```
 
-#### To stop pm2
+#### - To stop pm2
 
 ```bash
 pm2 stop app
@@ -169,7 +169,7 @@ pm2 stop app
 pm2 stop all
 ```
 
-#### To restart pm2
+#### - To restart pm2
 
 ```bash
 pm2 restart app
@@ -181,13 +181,13 @@ pm2 restart app
 pm2 restart all
 ```
 
-#### To see log
+#### - To see log
 
 ```bash
 pm2 log
 ```
 
-#### To clear all process log
+#### - To clear all process log
 
 ```bash
 pm2 flush
