@@ -260,3 +260,79 @@ sudo systemctl restart nginx
 ```bash
 sudo nginx -s reload
 ```
+
+# Step 5: Set up DNS with Route 53 🌐 (Before you begin, purchase a domain from Hostinger or GoDaddy)
+
+## 1. Access Amazon Route 53
+
+Open the Amazon Route 53 Console.
+
+## 2. Create a Hosted Zone
+
+- In the Route 53 dashboard, click on "Create Hosted Zone".
+- Enter your domain name (e.g., yourdomain.com) and choose a region.
+- Click on "Create."
+
+## 3. Obtain Name Servers
+
+After creating the hosted zone, note down the name server (NS) records provided by Route 53 (There will be 4 nameservers. Discard the dot at the end). These are the authoritative name servers for your domain.
+
+## 4. Update Domain Registrar's Name Servers
+
+- Log in to your domain registrar's website (the service where you purchased your domain, e.g., GoDaddy, Hostinger).
+- Navigate to the DNS management or name server settings.
+- Replace the existing name servers with the ones provided by Route 53.
+
+## 5. Create Record Sets
+
+- In the Route 53 dashboard, select the hosted zone you created.
+- Click on "Create Record".
+- For an A record (IPv4), set the following:
+          1. Name: (Leave it empty for the root domain, or enter a subdomain).
+          2. Type: A - IPv4 address
+          3. TTL: Choose an appropriate value (or leave the default) (By default it 300 hrs free a month).
+          4. Value: Enter the IPv4 address of your EC2 instance or other resource.
+- For a CNAME record, set the following:
+        1. Name: (Leave it empty for the root domain, or enter a subdomain).
+        2. Type: CNAME - Canonical name.
+        3. TTL: Choose an appropriate value (or leave the default) (By default it 300 hrs free a month).
+        4. Value: Enter the canonical name of your resource (e.g., your-load-balancer-url.elb.amazonaws.com).
+- Click on "Create" to save the record set.
+
+## 6. Your DNS is configured , It might take sometime to update the nameserver
+
+## 7. Test Your Domain
+
+Open a web browser and navigate to your domain (e.g., http://example.com). Ensure that it resolves to the correct AWS resource.
+
+# Step 6: Set Up SSL Certificate (http to https)
+
+## 1. Install Certbot
+
+```bash
+sudo add-apt-repository ppa:certbot/certbot
+```
+
+```bash
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install python3-certbot-nginx
+```
+
+## 2. Obtain SSL Certificate
+
+Replace `example.com` and `www.example.com` with your actual domain names. Follow the prompts to complete the certificate issuance process. Certbot will automatically update the Nginx configuration to use the obtained SSL certificate (if you have only one url set up give only one).
+
+```bash
+sudo certbot --nginx -d example.com -d www.example.com
+```
+
+## 3.  Automatic Renewal
+
+Certbot certificates only valid for 90 days, test the renewal process with, Certbot certificates need to be renewed periodically.
+
+```bash
+sudo certbot renew --dry-run
+```
