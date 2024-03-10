@@ -14,12 +14,12 @@ Go to the EC2 Dashboard
 
 ## 3. Launch an Instance
 
-• Click on the "Launch Instance" button.\n
-• Choose an Amazon Machine Image (AMI), such as Amazon Linux or Ubuntu.
-• Select an instance type based on your project requirements.
-• Here we are setting up EC2 instance with the Ubuntu 64-bit operating system and the t2.micro instance type, which is eligible for the AWS Free Tier.
-• Creating and Downloading Your PEM File : To securely connect to your EC2 instance, you’ll need a PEM (Privacy Enhanced Mail) file containing your private key.
-• Configuring Network Settings and Permissions : Now, let’s ensure your EC2 instance has the necessary network settings and permissions to communicate with the outside world. Check Allow SSH traffic from, Allow HTTPS traffic from the internet and Allow HTTP traffic from the internet are enabled.
-• Finally, click "Launch".
+- Click on the "Launch Instance" button.
+- Choose an Amazon Machine Image (AMI), such as Amazon Linux or Ubuntu.
+- Select an instance type based on your project requirements.
+- Here we are setting up EC2 instance with the Ubuntu 64-bit operating system and the t2.micro instance type, which is eligible for the AWS Free Tier.
+- Creating and Downloading Your PEM File : To securely connect to your EC2 instance, you’ll need a PEM (Privacy Enhanced Mail) file containing your private key.
+- Configuring Network Settings and Permissions : Now, let’s ensure your EC2 instance has the necessary network settings and permissions to communicate with the outside world. Check Allow SSH traffic from, Allow HTTPS traffic from the internet and Allow HTTP traffic from the internet are enabled.
+- Finally, click "Launch".
 
 # Step 2: Connect to Your EC2 Instance
