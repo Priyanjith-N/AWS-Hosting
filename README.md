@@ -287,16 +287,16 @@ After creating the hosted zone, note down the name server (NS) records provided 
 
 - In the Route 53 dashboard, select the hosted zone you created.
 - Click on "Create Record".
-- For an A record (IPv4), set the following:
-          1. Name: (Leave it empty for the root domain, or enter a subdomain).
-          2. Type: A - IPv4 address
-          3. TTL: Choose an appropriate value (or leave the default) (By default it 300 hrs free a month).
-          4. Value: Enter the IPv4 address of your EC2 instance or other resource.
-- For a CNAME record, set the following:
-        1. Name: (Leave it empty for the root domain, or enter a subdomain).
-        2. Type: CNAME - Canonical name.
-        3. TTL: Choose an appropriate value (or leave the default) (By default it 300 hrs free a month).
-        4. Value: Enter the canonical name of your resource (e.g., your-load-balancer-url.elb.amazonaws.com).
+- For an A record (IPv4), set the following:  
+          1. Name: (Leave it empty for the root domain, or enter a subdomain).  
+          2. Type: A - IPv4 address  
+          3. TTL: Choose an appropriate value (or leave the default) (By default it 300 hrs free a month).  
+          4. Value: Enter the IPv4 address of your EC2 instance or other resource.  
+- For a CNAME record, set the following:  
+        1. Name: (Leave it empty for the root domain, or enter a subdomain).  
+        2. Type: CNAME - Canonical name.  
+        3. TTL: Choose an appropriate value (or leave the default) (By default it 300 hrs free a month).  
+        4. Value: Enter the canonical name of your resource (e.g., your-load-balancer-url.elb.amazonaws.com).  
 - Click on "Create" to save the record set.
 
 ## 6. Your DNS is configured , It might take sometime to update the nameserver
