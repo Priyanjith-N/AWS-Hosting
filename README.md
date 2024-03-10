@@ -187,13 +187,13 @@ pm2 restart all
 pm2 log
 ```
 
-#### • To clear all process log
+#### • To clear log's of all process
 
 ```bash
 pm2 flush
 ```
 
-**To clear certain process you can you its id replace `<id>` with the id of your process to clear it's log**
+**To clear certain process log you can you its id replace `<id>` with the id of your process to clear it's log**
 
 ```bash
 pm2 flush <id>
@@ -213,7 +213,7 @@ sudo apt install nginx
 nano /etc/nginx/sites-available/default
 ```
 
-**Press and hold ctrl + k to clear the Default file and add the following***
+**Press and hold ctrl + k to clear the Default file and add the following**
 
 ```bash
 server {
@@ -265,7 +265,7 @@ sudo nginx -s reload
 
 ## 1. Access Amazon Route 53
 
-Open the Amazon Route 53 Console.
+Open the Amazon Route 53.
 
 ## 2. Create a Hosted Zone
 
