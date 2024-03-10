@@ -131,7 +131,7 @@ Use nano command to create or directly start typing to modify your file.
 nano .env
 ```
 
-## 5. : Make sure that your application runs smoothly
+## 5. Make sure that your application runs smoothly
 
 ## 1. Install pm2
 
@@ -148,3 +148,115 @@ pm2 start app.js
 ```
 
 Here app.js may change to your file name.
+
+## Other pm2 commands
+
+### To check the version of pm2
+
+```bash
+pm2 -v
+```
+
+### To stop pm2
+
+```bash
+pm2 stop app
+```
+
+**or this to stop all process**
+
+```bash
+pm2 stop all
+```
+
+### To restart pm2
+
+```bash
+pm2 restart app
+```
+
+**or this to restart all process**
+
+```bash
+pm2 restart all
+```
+
+### To see log
+
+```bash
+pm2 log
+```
+
+### To clear all process log
+
+```bash
+pm2 flush
+```
+
+**To clear certain process you can you its id replace `<id>` with the id of your process to clear it's log**
+
+```bash
+pm2 flush <id>
+```
+
+# Step 5: Install NGINX
+
+## 1. Install NGINX
+
+```bash
+sudo apt install nginx
+```
+
+## 2. Configure NGINX to Proxy Pass to your Node.js Application
+
+```bash
+nano /etc/nginx/sites-available/default
+```
+
+**Press and hold ctrl + k to clear the Default file and add the following***
+
+```bash
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+            proxy_pass http://localhost:8080;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+```
+
+**Make sure to change port number for me I use localhost 8080 change the port to your port number**
+
+## 3. To check NGINX config
+
+```bash
+sudo nginx -t
+```
+
+## 4. To restart the Nginx
+
+```bash
+sudo systemctl restart nginx
+```
+
+## 5. To check the Nginx status
+
+```bash
+sudo systemctl restart nginx
+```
+
+**or**
+
+```bash
+sudo nginx -s reload
+```
