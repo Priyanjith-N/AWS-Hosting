@@ -210,7 +210,7 @@ sudo apt install nginx
 ## 2. Configure NGINX to Proxy Pass to your Node.js Application
 
 ```bash
-nano /etc/nginx/sites-available/default
+sudo nano /etc/nginx/sites-available/default
 ```
 
 **Press and hold ctrl + k to clear the Default file and add the following**
@@ -252,7 +252,7 @@ sudo systemctl restart nginx
 ## 5. To check the Nginx status
 
 ```bash
-sudo systemctl restart nginx
+sudo systemctl status nginx
 ```
 
 **or**
